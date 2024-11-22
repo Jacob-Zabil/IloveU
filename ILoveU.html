@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color:#e0115f;
+            font-size: 5rem;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div id="display"></div>
+    <script>
+        let nameYou = prompt("tuliskan namamu :").toUpperCase();
+        const moveItem = function(){
+            let paraf = document.getElementById("display");
+            let array = ["I","LOVE",nameYou];
+            paraf.innerHTML = array[0];
+            let index = 0;
+            function showItem(){
+                index = (index + 1) % array.length;
+                paraf.innerHTML = array[index];
+            }
+            setInterval(showItem,2000)
+        }
+        moveItem()
+    </script>
+</body>
+</html>
